@@ -1,0 +1,24 @@
+{
+	"manifest_version": 2,
+	"name": "JMM Connector",
+	"version": "0.1",
+
+	"description": "JMM Connector Chrome Extension for Machines.",
+	"author": "R",
+
+	"background": {
+		"scripts": [ "jquery.min.js", "jquery-ui.min.js", "background.js" ],
+		"persistent": true
+	},
+	"permissions": [ "storage" ],
+
+	"content_scripts": [
+		{
+			"matches": [ "*://*/*" ],
+			"js": [ "jquery.min.js", "jquery-ui.min.js", "common.js", "jquery.sha256.min.js" ],
+			"run_at": "document_end"
+		}
+	],
+
+	"options_page": "options.html"
+}
